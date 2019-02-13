@@ -148,12 +148,152 @@
                                     <div class="tab-pane" id="volunteer">
                                         <form class="form-horizontal">
                                             <div class="form-group">
-                                                <label for="phone" class="col-sm-2 control-label">Phone Number</label>
+                                                <label for="phone" class="col-sm-6 control-label">Phone Number</label>
 
                                                 <div class="col-sm-10">
                                                 <input type="email" v-model="vForm.phone" id="phone" placeholder="phone" 
                                                 class="form-control" :class="{ 'is-invalid': form.errors.has('phone') }" >
                                                 <has-error :form="form" field="phone"></has-error>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="address" class="col-sm-10 control-label">Contact Address</label>
+
+                                                <div class="col-sm-10">
+                                                <input type="email" v-model="vForm.address" id="address" placeholder="address" 
+                                                class="form-control" :class="{ 'is-invalid': form.errors.has('address') }" >
+                                                <has-error :form="form" field="address"></has-error>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="profession" class="col-sm-2 control-label">Profession</label>
+
+                                                <div class="col-sm-10">
+                                                <input type="email" v-model="vForm.profession" id="profession" placeholder="profession" 
+                                                class="form-control" :class="{ 'is-invalid': form.errors.has('profession') }" >
+                                                <has-error :form="form" field="profession"></has-error>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="volunteerArea" class="col-sm-10 control-label">Area of volunteer</label>
+
+                                                <div class="col-sm-10">
+                                                <select v-model="vForm.volunteerArea" class="custom-select form-control" :class="{ 'is-invalid': vForm.errors.has('volunteerArea') }">
+                                                    <option value="Media Unit" selected>Media Unit</option>
+                                                    <option value="Fundraising unit">Fundraising unit</option>
+                                                    <option value="Medical unit">Medical unit</option>
+                                                    <option value="Awareness campaign unit">Awareness campaign unit</option>
+                                                    <option value="Advocacy and Research unit">Advocacy and Research unit</option>
+                                                    <option value="I.T unit">I.T unit</option>
+                                                    <option value="Welfare services unit">Welfare services unit</option>
+                                                    <option value="Accounting and logistics">Accounting and logistics</option>
+                                                </select>
+                                                <has-error :form="form" field="volunteerArea"></has-error>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="whyVolunteer" class="col-sm-10 control-label">Why do you want to volunteer</label>
+
+                                                <div class="col-sm-10">
+                                                <input type="text" v-model="vForm.whyVolunteer" id="whyVolunteer" placeholder="whyVolunteer" 
+                                                class="form-control" :class="{ 'is-invalid': vForm.errors.has('whyVolunteer') }" >
+                                                <has-error :form="form" field="whyVolunteer"></has-error>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="goal" class="col-sm-10 control-label">List 4 Goals you plan to achieve while volunteering with kindheart </label>
+
+                                                <div class="col-sm-10">
+                                                <input type="text" v-model="vForm.goal" id="goal" placeholder="goal" 
+                                                class="form-control" :class="{ 'is-invalid': form.errors.has('goal') }" >
+                                                <has-error :form="form" field="goal"></has-error>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="facebook" class="col-sm-6 control-label">Facebook Handle</label>
+
+                                                <div class="col-sm-10">
+                                                <input type="text" v-model="vForm.facebook" id="facebook" placeholder="facebook" 
+                                                class="form-control" :class="{ 'is-invalid': form.errors.has('facebook') }" >
+                                                <has-error :form="form" field="facebook"></has-error>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="instagram" class="col-sm-6 control-label">Instagram Handle</label>
+
+                                                <div class="col-sm-10">
+                                                <input type="text" v-model="vForm.instagram" id="instagram" placeholder="instagram" 
+                                                class="form-control" :class="{ 'is-invalid': form.errors.has('instagram') }" >
+                                                <has-error :form="form" field="instagram"></has-error>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="twitter" class="col-sm-2 control-label">twitter</label>
+
+                                                <div class="col-sm-10">
+                                                <input type="text" v-model="vForm.twitter" id="twitter" placeholder="twitter" 
+                                                class="form-control" :class="{ 'is-invalid': form.errors.has('twitter') }" >
+                                                <has-error :form="form" field="twitter"></has-error>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="heard" class="col-sm-10 control-label">How did you hear about Kindheart organization?</label>
+
+                                                <div class="col-sm-10">
+                                                <input type="text" v-model="vForm.heard" id="heard" placeholder="heard" 
+                                                class="form-control" :class="{ 'is-invalid': form.errors.has('heard') }" >
+                                                <has-error :form="form" field="heard"></has-error>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="enjoyedMost" class="col-sm-10 control-label">What have you enjoyed most in previous volunteer works?</label>
+
+                                                <div class="col-sm-10">
+                                                <input type="text" v-model="vForm.enjoyedMost" id="enjoyedMost" placeholder="enjoyedMost" 
+                                                class="form-control" :class="{ 'is-invalid': form.errors.has('enjoyedMost') }" >
+                                                <has-error :form="form" field="enjoyedMost"></has-error>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="enjoyedLeast" class="col-sm-10 control-label">What have you enjoyed the least in previous volunteer works?</label>
+
+                                                <div class="col-sm-10">
+                                                <input type="text" v-model="vForm.enjoyedLeast" id="enjoyedLeast" placeholder="enjoyedLeast" 
+                                                class="form-control" :class="{ 'is-invalid': form.errors.has('enjoyedLeast') }" >
+                                                <has-error :form="form" field="enjoyedLeast"></has-error>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="language" class="col-sm-10 control-label">Specify the languages you speak</label>
+
+                                                <div class="col-sm-10">
+                                                <input type="text" v-model="vForm.language" id="language" placeholder="language" 
+                                                class="form-control" :class="{ 'is-invalid': form.errors.has('language') }" >
+                                                <has-error :form="form" field="language"></has-error>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="channel" class="col-sm-10 control-label">What communication channels do you prefer?</label>
+
+                                                <div class="col-sm-10">
+                                                <select v-model="vForm.channel" class="custom-select form-control" :class="{ 'is-invalid': vForm.errors.has('channel') }">
+                                                    <option value="whatsapp" selected>WhatsApp</option>
+                                                    <option value="email">email</option>
+                                                </select>
+                                                <has-error :form="form" field="channel"></has-error>
                                                 </div>
                                             </div>
 
@@ -257,6 +397,13 @@
                 this.vForm.put('api/volunteer/')
                 .then( () => {
                     this.$Progress.finish()
+                    Swal.fire({
+                        position: 'top-end',
+                        type: 'success',
+                        title: 'Volunteer profile saved successfully',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
                 })
                 .catch( () => {
                     this.$Progress.fail()
@@ -267,6 +414,10 @@
             axios.get('api/profile')
             .then( ({data})=> {
                 this.form.fill(data)
+            }),
+            axios.get('api/volunteer')
+            .then( ({data})=> {
+                this.vForm.fill(data)
             })
 
         },

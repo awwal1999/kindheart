@@ -2697,6 +2697,146 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2774,6 +2914,14 @@ __webpack_require__.r(__webpack_exports__);
       this.$Progress.start();
       this.vForm.put('api/volunteer/').then(function () {
         _this3.$Progress.finish();
+
+        Swal.fire({
+          position: 'top-end',
+          type: 'success',
+          title: 'Volunteer profile saved successfully',
+          showConfirmButton: false,
+          timer: 1500
+        });
       }).catch(function () {
         _this3.$Progress.fail();
       });
@@ -2786,6 +2934,10 @@ __webpack_require__.r(__webpack_exports__);
       var data = _ref.data;
 
       _this4.form.fill(data);
+    }), axios.get('api/volunteer').then(function (_ref2) {
+      var data = _ref2.data;
+
+      _this4.vForm.fill(data);
     });
   },
   mounted: function mounted() {
@@ -45336,7 +45488,7 @@ var render = function() {
                                 _c(
                                   "label",
                                   {
-                                    staticClass: "col-sm-2 control-label",
+                                    staticClass: "col-sm-6 control-label",
                                     attrs: { for: "phone" }
                                   },
                                   [_vm._v("Phone Number")]
@@ -45383,6 +45535,919 @@ var render = function() {
                                     _vm._v(" "),
                                     _c("has-error", {
                                       attrs: { form: _vm.form, field: "phone" }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "form-group" }, [
+                                _c(
+                                  "label",
+                                  {
+                                    staticClass: "col-sm-10 control-label",
+                                    attrs: { for: "address" }
+                                  },
+                                  [_vm._v("Contact Address")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "col-sm-10" },
+                                  [
+                                    _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.vForm.address,
+                                          expression: "vForm.address"
+                                        }
+                                      ],
+                                      staticClass: "form-control",
+                                      class: {
+                                        "is-invalid": _vm.form.errors.has(
+                                          "address"
+                                        )
+                                      },
+                                      attrs: {
+                                        type: "email",
+                                        id: "address",
+                                        placeholder: "address"
+                                      },
+                                      domProps: { value: _vm.vForm.address },
+                                      on: {
+                                        input: function($event) {
+                                          if ($event.target.composing) {
+                                            return
+                                          }
+                                          _vm.$set(
+                                            _vm.vForm,
+                                            "address",
+                                            $event.target.value
+                                          )
+                                        }
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("has-error", {
+                                      attrs: {
+                                        form: _vm.form,
+                                        field: "address"
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "form-group" }, [
+                                _c(
+                                  "label",
+                                  {
+                                    staticClass: "col-sm-2 control-label",
+                                    attrs: { for: "profession" }
+                                  },
+                                  [_vm._v("Profession")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "col-sm-10" },
+                                  [
+                                    _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.vForm.profession,
+                                          expression: "vForm.profession"
+                                        }
+                                      ],
+                                      staticClass: "form-control",
+                                      class: {
+                                        "is-invalid": _vm.form.errors.has(
+                                          "profession"
+                                        )
+                                      },
+                                      attrs: {
+                                        type: "email",
+                                        id: "profession",
+                                        placeholder: "profession"
+                                      },
+                                      domProps: { value: _vm.vForm.profession },
+                                      on: {
+                                        input: function($event) {
+                                          if ($event.target.composing) {
+                                            return
+                                          }
+                                          _vm.$set(
+                                            _vm.vForm,
+                                            "profession",
+                                            $event.target.value
+                                          )
+                                        }
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("has-error", {
+                                      attrs: {
+                                        form: _vm.form,
+                                        field: "profession"
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "form-group" }, [
+                                _c(
+                                  "label",
+                                  {
+                                    staticClass: "col-sm-10 control-label",
+                                    attrs: { for: "volunteerArea" }
+                                  },
+                                  [_vm._v("Area of volunteer")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "col-sm-10" },
+                                  [
+                                    _c(
+                                      "select",
+                                      {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.vForm.volunteerArea,
+                                            expression: "vForm.volunteerArea"
+                                          }
+                                        ],
+                                        staticClass:
+                                          "custom-select form-control",
+                                        class: {
+                                          "is-invalid": _vm.vForm.errors.has(
+                                            "volunteerArea"
+                                          )
+                                        },
+                                        on: {
+                                          change: function($event) {
+                                            var $$selectedVal = Array.prototype.filter
+                                              .call(
+                                                $event.target.options,
+                                                function(o) {
+                                                  return o.selected
+                                                }
+                                              )
+                                              .map(function(o) {
+                                                var val =
+                                                  "_value" in o
+                                                    ? o._value
+                                                    : o.value
+                                                return val
+                                              })
+                                            _vm.$set(
+                                              _vm.vForm,
+                                              "volunteerArea",
+                                              $event.target.multiple
+                                                ? $$selectedVal
+                                                : $$selectedVal[0]
+                                            )
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "option",
+                                          {
+                                            attrs: {
+                                              value: "Media Unit",
+                                              selected: ""
+                                            }
+                                          },
+                                          [_vm._v("Media Unit")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "option",
+                                          {
+                                            attrs: { value: "Fundraising unit" }
+                                          },
+                                          [_vm._v("Fundraising unit")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "option",
+                                          { attrs: { value: "Medical unit" } },
+                                          [_vm._v("Medical unit")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "option",
+                                          {
+                                            attrs: {
+                                              value: "Awareness campaign unit"
+                                            }
+                                          },
+                                          [_vm._v("Awareness campaign unit")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "option",
+                                          {
+                                            attrs: {
+                                              value:
+                                                "Advocacy and Research unit"
+                                            }
+                                          },
+                                          [_vm._v("Advocacy and Research unit")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "option",
+                                          { attrs: { value: "I.T unit" } },
+                                          [_vm._v("I.T unit")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "option",
+                                          {
+                                            attrs: {
+                                              value: "Welfare services unit"
+                                            }
+                                          },
+                                          [_vm._v("Welfare services unit")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "option",
+                                          {
+                                            attrs: {
+                                              value: "Accounting and logistics"
+                                            }
+                                          },
+                                          [_vm._v("Accounting and logistics")]
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c("has-error", {
+                                      attrs: {
+                                        form: _vm.form,
+                                        field: "volunteerArea"
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "form-group" }, [
+                                _c(
+                                  "label",
+                                  {
+                                    staticClass: "col-sm-10 control-label",
+                                    attrs: { for: "whyVolunteer" }
+                                  },
+                                  [_vm._v("Why do you want to volunteer")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "col-sm-10" },
+                                  [
+                                    _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.vForm.whyVolunteer,
+                                          expression: "vForm.whyVolunteer"
+                                        }
+                                      ],
+                                      staticClass: "form-control",
+                                      class: {
+                                        "is-invalid": _vm.vForm.errors.has(
+                                          "whyVolunteer"
+                                        )
+                                      },
+                                      attrs: {
+                                        type: "text",
+                                        id: "whyVolunteer",
+                                        placeholder: "whyVolunteer"
+                                      },
+                                      domProps: {
+                                        value: _vm.vForm.whyVolunteer
+                                      },
+                                      on: {
+                                        input: function($event) {
+                                          if ($event.target.composing) {
+                                            return
+                                          }
+                                          _vm.$set(
+                                            _vm.vForm,
+                                            "whyVolunteer",
+                                            $event.target.value
+                                          )
+                                        }
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("has-error", {
+                                      attrs: {
+                                        form: _vm.form,
+                                        field: "whyVolunteer"
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "form-group" }, [
+                                _c(
+                                  "label",
+                                  {
+                                    staticClass: "col-sm-10 control-label",
+                                    attrs: { for: "goal" }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "List 4 Goals you plan to achieve while volunteering with kindheart "
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "col-sm-10" },
+                                  [
+                                    _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.vForm.goal,
+                                          expression: "vForm.goal"
+                                        }
+                                      ],
+                                      staticClass: "form-control",
+                                      class: {
+                                        "is-invalid": _vm.form.errors.has(
+                                          "goal"
+                                        )
+                                      },
+                                      attrs: {
+                                        type: "text",
+                                        id: "goal",
+                                        placeholder: "goal"
+                                      },
+                                      domProps: { value: _vm.vForm.goal },
+                                      on: {
+                                        input: function($event) {
+                                          if ($event.target.composing) {
+                                            return
+                                          }
+                                          _vm.$set(
+                                            _vm.vForm,
+                                            "goal",
+                                            $event.target.value
+                                          )
+                                        }
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("has-error", {
+                                      attrs: { form: _vm.form, field: "goal" }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "form-group" }, [
+                                _c(
+                                  "label",
+                                  {
+                                    staticClass: "col-sm-6 control-label",
+                                    attrs: { for: "facebook" }
+                                  },
+                                  [_vm._v("Facebook Handle")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "col-sm-10" },
+                                  [
+                                    _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.vForm.facebook,
+                                          expression: "vForm.facebook"
+                                        }
+                                      ],
+                                      staticClass: "form-control",
+                                      class: {
+                                        "is-invalid": _vm.form.errors.has(
+                                          "facebook"
+                                        )
+                                      },
+                                      attrs: {
+                                        type: "text",
+                                        id: "facebook",
+                                        placeholder: "facebook"
+                                      },
+                                      domProps: { value: _vm.vForm.facebook },
+                                      on: {
+                                        input: function($event) {
+                                          if ($event.target.composing) {
+                                            return
+                                          }
+                                          _vm.$set(
+                                            _vm.vForm,
+                                            "facebook",
+                                            $event.target.value
+                                          )
+                                        }
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("has-error", {
+                                      attrs: {
+                                        form: _vm.form,
+                                        field: "facebook"
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "form-group" }, [
+                                _c(
+                                  "label",
+                                  {
+                                    staticClass: "col-sm-6 control-label",
+                                    attrs: { for: "instagram" }
+                                  },
+                                  [_vm._v("Instagram Handle")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "col-sm-10" },
+                                  [
+                                    _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.vForm.instagram,
+                                          expression: "vForm.instagram"
+                                        }
+                                      ],
+                                      staticClass: "form-control",
+                                      class: {
+                                        "is-invalid": _vm.form.errors.has(
+                                          "instagram"
+                                        )
+                                      },
+                                      attrs: {
+                                        type: "text",
+                                        id: "instagram",
+                                        placeholder: "instagram"
+                                      },
+                                      domProps: { value: _vm.vForm.instagram },
+                                      on: {
+                                        input: function($event) {
+                                          if ($event.target.composing) {
+                                            return
+                                          }
+                                          _vm.$set(
+                                            _vm.vForm,
+                                            "instagram",
+                                            $event.target.value
+                                          )
+                                        }
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("has-error", {
+                                      attrs: {
+                                        form: _vm.form,
+                                        field: "instagram"
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "form-group" }, [
+                                _c(
+                                  "label",
+                                  {
+                                    staticClass: "col-sm-2 control-label",
+                                    attrs: { for: "twitter" }
+                                  },
+                                  [_vm._v("twitter")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "col-sm-10" },
+                                  [
+                                    _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.vForm.twitter,
+                                          expression: "vForm.twitter"
+                                        }
+                                      ],
+                                      staticClass: "form-control",
+                                      class: {
+                                        "is-invalid": _vm.form.errors.has(
+                                          "twitter"
+                                        )
+                                      },
+                                      attrs: {
+                                        type: "text",
+                                        id: "twitter",
+                                        placeholder: "twitter"
+                                      },
+                                      domProps: { value: _vm.vForm.twitter },
+                                      on: {
+                                        input: function($event) {
+                                          if ($event.target.composing) {
+                                            return
+                                          }
+                                          _vm.$set(
+                                            _vm.vForm,
+                                            "twitter",
+                                            $event.target.value
+                                          )
+                                        }
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("has-error", {
+                                      attrs: {
+                                        form: _vm.form,
+                                        field: "twitter"
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "form-group" }, [
+                                _c(
+                                  "label",
+                                  {
+                                    staticClass: "col-sm-10 control-label",
+                                    attrs: { for: "heard" }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "How did you hear about Kindheart organization?"
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "col-sm-10" },
+                                  [
+                                    _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.vForm.heard,
+                                          expression: "vForm.heard"
+                                        }
+                                      ],
+                                      staticClass: "form-control",
+                                      class: {
+                                        "is-invalid": _vm.form.errors.has(
+                                          "heard"
+                                        )
+                                      },
+                                      attrs: {
+                                        type: "text",
+                                        id: "heard",
+                                        placeholder: "heard"
+                                      },
+                                      domProps: { value: _vm.vForm.heard },
+                                      on: {
+                                        input: function($event) {
+                                          if ($event.target.composing) {
+                                            return
+                                          }
+                                          _vm.$set(
+                                            _vm.vForm,
+                                            "heard",
+                                            $event.target.value
+                                          )
+                                        }
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("has-error", {
+                                      attrs: { form: _vm.form, field: "heard" }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "form-group" }, [
+                                _c(
+                                  "label",
+                                  {
+                                    staticClass: "col-sm-10 control-label",
+                                    attrs: { for: "enjoyedMost" }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "What have you enjoyed most in previous volunteer works?"
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "col-sm-10" },
+                                  [
+                                    _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.vForm.enjoyedMost,
+                                          expression: "vForm.enjoyedMost"
+                                        }
+                                      ],
+                                      staticClass: "form-control",
+                                      class: {
+                                        "is-invalid": _vm.form.errors.has(
+                                          "enjoyedMost"
+                                        )
+                                      },
+                                      attrs: {
+                                        type: "text",
+                                        id: "enjoyedMost",
+                                        placeholder: "enjoyedMost"
+                                      },
+                                      domProps: {
+                                        value: _vm.vForm.enjoyedMost
+                                      },
+                                      on: {
+                                        input: function($event) {
+                                          if ($event.target.composing) {
+                                            return
+                                          }
+                                          _vm.$set(
+                                            _vm.vForm,
+                                            "enjoyedMost",
+                                            $event.target.value
+                                          )
+                                        }
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("has-error", {
+                                      attrs: {
+                                        form: _vm.form,
+                                        field: "enjoyedMost"
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "form-group" }, [
+                                _c(
+                                  "label",
+                                  {
+                                    staticClass: "col-sm-10 control-label",
+                                    attrs: { for: "enjoyedLeast" }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "What have you enjoyed the least in previous volunteer works?"
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "col-sm-10" },
+                                  [
+                                    _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.vForm.enjoyedLeast,
+                                          expression: "vForm.enjoyedLeast"
+                                        }
+                                      ],
+                                      staticClass: "form-control",
+                                      class: {
+                                        "is-invalid": _vm.form.errors.has(
+                                          "enjoyedLeast"
+                                        )
+                                      },
+                                      attrs: {
+                                        type: "text",
+                                        id: "enjoyedLeast",
+                                        placeholder: "enjoyedLeast"
+                                      },
+                                      domProps: {
+                                        value: _vm.vForm.enjoyedLeast
+                                      },
+                                      on: {
+                                        input: function($event) {
+                                          if ($event.target.composing) {
+                                            return
+                                          }
+                                          _vm.$set(
+                                            _vm.vForm,
+                                            "enjoyedLeast",
+                                            $event.target.value
+                                          )
+                                        }
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("has-error", {
+                                      attrs: {
+                                        form: _vm.form,
+                                        field: "enjoyedLeast"
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "form-group" }, [
+                                _c(
+                                  "label",
+                                  {
+                                    staticClass: "col-sm-10 control-label",
+                                    attrs: { for: "language" }
+                                  },
+                                  [_vm._v("Specify the languages you speak")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "col-sm-10" },
+                                  [
+                                    _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.vForm.language,
+                                          expression: "vForm.language"
+                                        }
+                                      ],
+                                      staticClass: "form-control",
+                                      class: {
+                                        "is-invalid": _vm.form.errors.has(
+                                          "language"
+                                        )
+                                      },
+                                      attrs: {
+                                        type: "text",
+                                        id: "language",
+                                        placeholder: "language"
+                                      },
+                                      domProps: { value: _vm.vForm.language },
+                                      on: {
+                                        input: function($event) {
+                                          if ($event.target.composing) {
+                                            return
+                                          }
+                                          _vm.$set(
+                                            _vm.vForm,
+                                            "language",
+                                            $event.target.value
+                                          )
+                                        }
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("has-error", {
+                                      attrs: {
+                                        form: _vm.form,
+                                        field: "language"
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "form-group" }, [
+                                _c(
+                                  "label",
+                                  {
+                                    staticClass: "col-sm-10 control-label",
+                                    attrs: { for: "channel" }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "What communication channels do you prefer?"
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "col-sm-10" },
+                                  [
+                                    _c(
+                                      "select",
+                                      {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.vForm.channel,
+                                            expression: "vForm.channel"
+                                          }
+                                        ],
+                                        staticClass:
+                                          "custom-select form-control",
+                                        class: {
+                                          "is-invalid": _vm.vForm.errors.has(
+                                            "channel"
+                                          )
+                                        },
+                                        on: {
+                                          change: function($event) {
+                                            var $$selectedVal = Array.prototype.filter
+                                              .call(
+                                                $event.target.options,
+                                                function(o) {
+                                                  return o.selected
+                                                }
+                                              )
+                                              .map(function(o) {
+                                                var val =
+                                                  "_value" in o
+                                                    ? o._value
+                                                    : o.value
+                                                return val
+                                              })
+                                            _vm.$set(
+                                              _vm.vForm,
+                                              "channel",
+                                              $event.target.multiple
+                                                ? $$selectedVal
+                                                : $$selectedVal[0]
+                                            )
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "option",
+                                          {
+                                            attrs: {
+                                              value: "whatsapp",
+                                              selected: ""
+                                            }
+                                          },
+                                          [_vm._v("WhatsApp")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "option",
+                                          { attrs: { value: "email" } },
+                                          [_vm._v("email")]
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c("has-error", {
+                                      attrs: {
+                                        form: _vm.form,
+                                        field: "channel"
+                                      }
                                     })
                                   ],
                                   1
