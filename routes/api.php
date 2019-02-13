@@ -16,3 +16,11 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Route::apiResource('users', 'API\UserController');
+Route::get('profile', 'API\UserController@profile');
+Route::patch('profile', 'API\UserController@updateProfile');
+Route::get('work', 'API\PatientController@work');
+Route::put('work', 'API\PatientController@storeWork');
+Route::get('cancer', 'API\PatientController@cancer');
+Route::put('cancer', 'API\PatientController@storeCancer');

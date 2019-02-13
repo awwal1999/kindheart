@@ -1,4 +1,3 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -8,7 +7,62 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+import { Form, HasError, AlertError } from 'vform';
 
+window.Form = Form;
+Vue.component(HasError.name, HasError)
+Vue.component(AlertError.name, AlertError)
+
+import VueRouter from 'vue-router';
+
+Vue.use(VueRouter)
+
+let routes = [
+  { path: '/developer', component: require('./components/Developer.vue').default },
+  { path: '/dashboard', component: require('./components/Dashboard.vue').default },
+  { path: '/profile', component: require('./components/Profile.vue').default },
+  { path: '/vprofile', component: require('./components/Vprofile.vue').default },
+  { path: '/cancer', component: require('./components/Cancer.vue').default }
+];
+
+const router = new VueRouter({
+  mode: 'history',
+  routes // short for `routes: routes`
+});
+
+import VueProgressBar from 'vue-progressbar'
+
+//Vue Progress Bar
+Vue.use(VueProgressBar, {
+  color: 'rgb(143, 255, 199)',
+  failedColor: 'red',
+  height: '2px'
+})
+
+//Oauth Vue
+Vue.component(
+  'passport-clients',
+  require('./components/passport/Clients.vue').default
+);
+
+Vue.component(
+  'passport-authorized-clients',
+  require('./components/passport/AuthorizedClients.vue').default
+);
+
+Vue.component(
+  'passport-personal-access-tokens',
+  require('./components/passport/PersonalAccessTokens.vue').default
+);
+
+import Swal from 'sweetalert2';
+window.Swal = Swal;
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000
+});
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -29,5 +83,6 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  */
 
 const app = new Vue({
-    el: '#app'
+  el: '#app',
+  router
 });
