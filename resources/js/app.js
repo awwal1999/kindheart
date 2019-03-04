@@ -63,6 +63,10 @@ const Toast = Swal.mixin({
   showConfirmButton: false,
   timer: 3000
 });
+
+window.Toast = Toast;
+
+window.Fire = new Vue();
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -75,6 +79,8 @@ const Toast = Swal.mixin({
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('home', require('./components/Home.vue').default);
+Vue.component('topnav', require('./components/Nav.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

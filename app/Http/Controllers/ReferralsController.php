@@ -36,13 +36,19 @@ class ReferralsController extends Controller
      */
     public function store(Request $request)
     {
-        $patient = request()['patient'];
-        $referrer = request()['referrer'];
+        // return request()->all();
+        $this->validate(request(), [
+            'patient.name' => 'required|string|min:3',
+            'patient.phone' => 'required|string|min:8|unique:potential_patients,phone',
+            'patient.email' => 'email',            
+        ]);
+        $patient = request()->json('patient');
+        $referrer = request()->json('referrer');
         $patient = PotentialPatient::create($patient);
         $referrer['potential_patients_id'] = $patient->id;
         $referrer = Referrer::create($referrer);
-        return redirect()->back();
-        return $referrer;
+        // return redirect()->back();
+        return response()->json(['message' => 'Success', 201], 201);
     }
 
     /**

@@ -26,3 +26,4 @@ Route::get('cancer', 'API\PatientController@cancer');
 Route::put('cancer', 'API\PatientController@storeCancer');
 Route::get('volunteer', 'API\VolunteerController@volunteer');
 Route::put('volunteer', 'API\VolunteerController@storeVolunteer');
+Route::post('volunteer', 'API\VolunteerController@registerVolunteer');

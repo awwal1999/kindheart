@@ -36,7 +36,7 @@
       <div class="modal-body">
             @csrf
             <div class="form-group">
-                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" 
+                <input id="login-email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" 
                 placeholder="email"
                 name="email" value="{{ old('email') }}" required autofocus>
                 @if ($errors->has('email'))
@@ -46,7 +46,7 @@
                 @endif
             </div>
             <div class="form-group">
-                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" 
+                <input id="login-password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" 
                 placeholder="password"
                 name="password" required>
                 @if ($errors->has('password'))
@@ -177,22 +177,3 @@
     </div>
   </div>
 </div>
-<script>
-    // document.getElementById("myBtn").addEventListener("click", function(e) {
-    //     // alert("Hello World!");
-    //     e.preventDefault();
-    //     var register = document.getElementById("register");
-    //     var register = document.getElementById("login");
-    //     login.style.display = "none";
-    //     register.style.display = "block";
-    // });
-
-//     function myFunction() {
-//   var x = document.getElementById("myDIV");
-//   if (x.style.display === "none") {
-//     x.style.display = "block";
-//   } else {
-//     x.style.display = "none";
-//   }
-// }
-</script>

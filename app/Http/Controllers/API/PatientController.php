@@ -88,7 +88,7 @@ class PatientController extends Controller
     public function work()
     {
         $user = auth('api')->user();
-        return Occupation::find($user->id);
+        return Occupation::where('user_id','=',$user->id)->firstOrFail();
     }
     
     public function storeCancer()
@@ -99,9 +99,9 @@ class PatientController extends Controller
             'stage' => 'required',
             'hospital' => 'required',
             'hconsultant' => 'required',
-            'hconsultant_phone' => 'required',
+            'hconsultant_phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
             'liaison_officer' => 'required',
-            'liaison_officer_phone' => 'required',
+            'liaison_officer_phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
         ]);
         
          $validated['user_id'] = $user->id;

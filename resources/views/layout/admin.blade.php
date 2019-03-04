@@ -12,7 +12,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>{{ config('app.name', 'Laravel') }}</title>
+  <title>{{ config('app.name', 'Kindheart') }}</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="css/app.css">
@@ -103,6 +103,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </router-link>
           </li> --}}
+          @can('isVolunteer')
+            
+          
           <li class="nav-item">
             <router-link to="/vprofile" class="nav-link">
               <i class="nav-icon fas fa-user orange"></i>
@@ -111,6 +114,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </router-link>
           </li>
+          @endcan
+          @can('isPatient')
           <li class="nav-item">
             <router-link to="/profile" class="nav-link">
               <i class="nav-icon fas fa-user orange"></i>
@@ -119,6 +124,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </router-link>
           </li>
+          @endcan
           <li class="nav-item">
             <a class="nav-link" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
@@ -169,7 +175,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       Anything you want
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2018 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <strong>Copyright &copy;2019 <a href="http://kindheartsng.org/">KindHeart</a>.</strong> All rights reserved.
   </footer>
 </div>
 <!-- ./wrapper -->

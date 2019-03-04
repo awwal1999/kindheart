@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\API;
 
+use App\User;
+use App\Volunteer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Volunteer;
+use Illuminate\Support\Facades\Hash;
 
 class VolunteerController extends Controller
 {
@@ -15,7 +17,7 @@ class VolunteerController extends Controller
     {
         $user = auth('api')->user();
         $validated = $this->validate(request(), [
-            'phone' => 'required',
+            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
             'address' => 'required',
             'profession' => 'required',
             'volunteerArea' => 'required',
@@ -42,5 +44,24 @@ class VolunteerController extends Controller
         }
         Volunteer::create($validated);
         return ['success' => 'Volunteer created'];
+    }
+
+    public function registerVolunteer() {
+        // return request()->json('volunteer.name');
+        $this->validate(request(), [
+            'volunteer.name' => 'required|string|min:3',
+            'volunteer.phone' => 'regex:/^([0-9\s\-\+\(\)]*)$/|min:10|unique:potential_patients,phone',
+            'volunteer.email' => 'email|unique:users,email',            
+            'volunteer.password' => 'required|string|min:6',            
+            'volunteer.c_password' => 'required|same:volunteer.password',            
+        ]);
+        $user = User::create([
+            "name" => request()->json('volunteer.name'),
+            "email" => request()->json('volunteer.email'),
+            "type" => 'volunteer',
+            // "phone" => request()->json('volunteer.phone'),
+            "password" => Hash::make( request()->json('volunteer.password')),
+        ]);
+        return response()->json(['status' => 'Ok', 'success' => 'User Created Successfully', $user], 201);
     }
 }

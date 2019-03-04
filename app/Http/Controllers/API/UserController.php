@@ -67,8 +67,8 @@ class UserController extends Controller
             'name' => 'required|string|min:3',
             'email' => 'required|string|email|min:3|unique:users,email,' . $user->id,
             'password' => 'sometimes|required|min:6',
-            'sex' => 'required',
-            'age' => 'required',
+            'sex' => 'required|string',
+            'age' => 'required|numeric',
         ]);
 
         if (request()->photo && request()->photo != $currentPhoto) {

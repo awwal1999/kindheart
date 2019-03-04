@@ -39,13 +39,13 @@
 
                                     <ul class="list-group list-group-unbordered mb-3">
                                     <li class="list-group-item">
-                                        <b>Sponsors</b> <a class="float-right">1,322</a>
+                                        <b>Sponsors</b> <a class="float-right">0</a>
                                     </li>
                                     <li class="list-group-item">
-                                        <b>Volunteers</b> <a class="float-right">543</a>
+                                        <b>Volunteers</b> <a class="float-right">0</a>
                                     </li>
                                     <li class="list-group-item">
-                                        <b>Amount</b> <a class="float-right">13,287</a>
+                                        <b>Amount</b> <a class="float-right">0</a>
                                     </li>
                                     </ul>
 
@@ -62,22 +62,126 @@
                                 <div class="card">
                                 <div class="card-header p-2">
                                     <ul class="nav nav-pills">
-                                    <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">profile</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#work" data-toggle="tab">Work</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#cancer" data-toggle="tab">Cancer details</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a></li>
+                                    <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Profile</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#work" data-toggle="tab">Work Details</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#cancer" data-toggle="tab">Cancer Details</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Personal Details</a></li>
                                     </ul>
                                 </div><!-- /.card-header -->
                                 <div class="card-body">
                                     <div class="tab-content">
                                     <div class="active tab-pane" id="activity">
+                                        <!-- Post -->
+                                        <div class="post">
+                                        <div class="user-block">
+                                            <span class="username" style="margin-left:0">
+                                                <a href="#">Work</a>
+                                            </span>
+                                        </div>
+                                        <!-- /.user-block -->
+                                        <table class="table table-borderless">
+                                        <col width="450px" />
+                                        <tbody>
+                                            <tr>
+                                            <td>Occupation</td>
+                                            <td>{{this.workForm.occupation || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Place Of Employment</td>
+                                            <td>{{this.workForm.place_of_employment || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Position/Level</td>
+                                            <td>{{this.workForm.position || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Address</td>
+                                            <td>{{this.workForm.address || 'not filled'}}</td>
+                                            </tr>
+                                        </tbody>
+                                        </table>
 
+                                        </div>
+                                        <!-- /.post -->
 
-                                        <p>
-                                            Profile Page
-                                        </p>
+                                        <!-- Post -->
+                                        <div class="post clearfix">
+                                        <div class="user-block">
+                                            <span class="username" style="margin-left:0">
+                                            <a href="#">Cancer Details</a>
+                                            </span>
+                                        </div>
+                                        <!-- /.user-block -->
+                                        <table class="table table-borderless">
+                                        <col width="450px" />
+                                        <tbody>
+                                            <tr>
+                                            <td>Type Of cancer</td>
+                                            <td>{{this.cancerForm.type || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Stage Of Cancer</td>
+                                            <td>{{this.cancerForm.stage || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Hospital</td>
+                                            <td>{{this.cancerForm.hospital || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Hospital Consultant</td>
+                                            <td>{{this.cancerForm.hconsultant || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Hospital Consultant Phone</td>
+                                            <td>{{this.cancerForm.hconsultant_phone || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Kindheart Liason Officer</td>
+                                            <td>{{this.cancerForm.liaison_officer || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Kindheart Liason Officer Phone</td>
+                                            <td>{{this.cancerForm.liaison_officer_phone || 'not filled'}}</td>
+                                            </tr>
+                                        </tbody>
+                                        </table>
+                                        </div>
+                                        <!-- /.post -->
+
+                                        <!-- Post -->
+                                        <div class="post clearfix">
+                                        <div class="user-block">
+                                            <span class="username" style="margin-left:0">
+                                            <a href="#">Personal Details</a>
+                                            </span>
+                                        </div>
+                                        <!-- /.user-block -->
+                                        <table class="table table-borderless">
+                                        <col width="450px" />
+                                        <tbody>
+                                            <tr>
+                                            <td>Name</td>
+                                            <td>{{this.form.name || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>E-Mail</td>
+                                            <td>{{this.form.email || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Sex</td>
+                                            <td>{{this.form.sex || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Age</td>
+                                            <td>{{this.form.age || 'not filled'}}</td>
+                                            </tr>
+                                        </tbody>
+                                        </table>
+                                        </div>
+                                        <!-- /.post -->
+
                                     </div>
-                                    <!-- /.tab-pane -->
+                                    <!-- /.tab-pane profile page -->
 
                                     <div class="tab-pane" id="settings">
                                         <form class="form-horizontal">
@@ -85,7 +189,7 @@
                                                 <label for="inputName" class="col-sm-2 control-label">Name</label>
 
                                                 <div class="col-sm-10">
-                                                <input type="email" v-model="form.name" id="inputName" placeholder="Name" 
+                                                <input type="text" v-model="form.name" id="inputName" placeholder="Name" 
                                                 class="form-control" :class="{ 'is-invalid': form.errors.has('name') }" >
                                                 <has-error :form="form" field="name"></has-error>
                                                 </div>
@@ -108,17 +212,17 @@
                                                                 <option value="male" selected>Male</option>
                                                                 <option value="female">Female</option>
                                                             </select>
-                                                        </div>
                                                         <has-error :form="form" field="sex"></has-error>
+                                                        </div>
                                                     </div>
                                                     <div class="col">
-                                                        <div class="form-group row">
+                                                        <div class="form-group ">
                                                             <label for="age" class="col-sm-10 col-form-label">Age</label>
                                                             <div class="col-sm-4">
                                                                 <input v-model="form.age" type="text" class="form-control" :class="{ 'is-invalid': form.errors.has('age') }"
                                                                  placeholder="Age">
-                                                            </div>
                                                             <has-error :form="form" field="age"></has-error>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -156,8 +260,8 @@
 
                                                 <div class="col-sm-10">
                                                 <input type="text" v-model="cancerForm.type" id="type" placeholder="type of cancer" 
-                                                class="form-control" :class="{ 'is-invalid': cancerForm.errors.has('type') }" >
-                                                <has-error :form="form" field="type"></has-error>
+                                                class="form-control" :class="{ 'is-invalid': cancerForm.errors.has('type') }" required>
+                                                <has-error :form="cancerForm" field="type"></has-error>
                                                 </div>
                                             </div>
                                             
@@ -166,8 +270,8 @@
 
                                                 <div class="col-sm-10">
                                                 <input type="text" v-model="cancerForm.stage" id="stage" placeholder="stage of cancer" 
-                                                class="form-control" :class="{ 'is-invalid': cancerForm.errors.has('stage') }" >
-                                                <has-error :form="form" field="stage"></has-error>
+                                                class="form-control" :class="{ 'is-invalid': cancerForm.errors.has('stage') }" required>
+                                                <has-error :form="cancerForm" field="stage"></has-error>
                                                 </div>
                                             </div>
                                             
@@ -176,8 +280,8 @@
 
                                                 <div class="col-sm-10">
                                                 <input type="text" v-model="cancerForm.hospital" id="position" placeholder="hospital" 
-                                                class="form-control" :class="{ 'is-invalid': cancerForm.errors.has('hospital') }" >
-                                                <has-error :form="form" field="hospital"></has-error>
+                                                class="form-control" :class="{ 'is-invalid': cancerForm.errors.has('hospital') }" required>
+                                                <has-error :form="cancerForm" field="hospital"></has-error>
                                                 </div>
                                             </div>
                                             
@@ -186,7 +290,7 @@
 
                                                 <div class="col-sm-10">
                                                 <input type="text" v-model="cancerForm.hconsultant" id="hconsultant" placeholder="hospital consultant" 
-                                                class="form-control" :class="{ 'is-invalid': cancerForm.errors.has('hconsultant') }" >
+                                                class="form-control" :class="{ 'is-invalid': cancerForm.errors.has('hconsultant') }" required>
                                                 <has-error :form="cancerForm" field="hconsultant"></has-error>
                                                 </div>
                                             </div>
@@ -195,8 +299,8 @@
                                                 <label for="hconsultant_phone" class="col-sm-4 control-label">Hospital Consultant Phone</label>
 
                                                 <div class="col-sm-10">
-                                                <input type="text" v-model="cancerForm.hconsultant_phone" id="hconsultant_phone" placeholder="hospital consultant phone" 
-                                                class="form-control" :class="{ 'is-invalid': cancerForm.errors.has('hconsultant_phone') }" >
+                                                <input type="tel" v-model="cancerForm.hconsultant_phone" id="hconsultant_phone" placeholder="hospital consultant phone" 
+                                                class="form-control" :class="{ 'is-invalid': cancerForm.errors.has('hconsultant_phone') }" required>
                                                 <has-error :form="cancerForm" field="hconsultant_phone"></has-error>
                                                 </div>
                                             </div>
@@ -206,17 +310,17 @@
 
                                                 <div class="col-sm-10">
                                                 <input type="text" v-model="cancerForm.liaison_officer" id="liaison_officer" placeholder="kindheart liason officer" 
-                                                class="form-control" :class="{ 'is-invalid': cancerForm.errors.has('liaison_officer') }" >
+                                                class="form-control" :class="{ 'is-invalid': cancerForm.errors.has('liaison_officer') }" required>
                                                 <has-error :form="cancerForm" field="liaison_officer"></has-error>
                                                 </div>
                                             </div>
                                             
                                             <div class="form-group">
-                                                <label for="liaison_officer_phone" class="col-sm-4 control-label">Kindheart Liason Officer</label>
+                                                <label for="liaison_officer_phone" class="col-sm-4 control-label">Kindheart Liason Officer Phone</label>
 
                                                 <div class="col-sm-10">
-                                                <input type="text" v-model="cancerForm.liaison_officer_phone" id="liaison_officer_phone" placeholder="kindheart liason officer" 
-                                                class="form-control" :class="{ 'is-invalid': cancerForm.errors.has('liaison_officer_phone') }" >
+                                                <input type="tel" v-model="cancerForm.liaison_officer_phone" id="liaison_officer_phone" placeholder="kindheart liason officer phone" 
+                                                class="form-control" :class="{ 'is-invalid': cancerForm.errors.has('liaison_officer_phone') }" required>
                                                 <has-error :form="cancerForm" field="liaison_officer_phone"></has-error>
                                                 </div>
                                             </div>
@@ -238,7 +342,7 @@
                                                 <div class="col-sm-10">
                                                 <input type="text" v-model="workForm.occupation" id="occupation" placeholder="occupation" 
                                                 class="form-control" :class="{ 'is-invalid': workForm.errors.has('occupation') }" >
-                                                <has-error :form="form" field="occupation"></has-error>
+                                                <has-error :form="workForm" field="occupation"></has-error>
                                                 </div>
                                             </div>
                                             
@@ -248,7 +352,7 @@
                                                 <div class="col-sm-10">
                                                 <input type="text" v-model="workForm.place_of_employment" id="place_of_employment" placeholder="employment" 
                                                 class="form-control" :class="{ 'is-invalid': workForm.errors.has('place_of_employment') }" >
-                                                <has-error :form="form" field="place_of_employment"></has-error>
+                                                <has-error :form="workForm" field="place_of_employment"></has-error>
                                                 </div>
                                             </div>
                                             
@@ -258,7 +362,7 @@
                                                 <div class="col-sm-10">
                                                 <input type="text" v-model="workForm.position" id="position" placeholder="position" 
                                                 class="form-control" :class="{ 'is-invalid': workForm.errors.has('position') }" >
-                                                <has-error :form="form" field="position"></has-error>
+                                                <has-error :form="workForm" field="position"></has-error>
                                                 </div>
                                             </div>
                                             

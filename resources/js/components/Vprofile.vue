@@ -39,10 +39,10 @@
 
                                     <ul class="list-group list-group-unbordered mb-3">
                                     <li class="list-group-item">
-                                        <b>Patients Volunteered for</b> <a class="float-right">1,322</a>
+                                        <b>Patients Volunteered for</b> <a class="float-right">0</a>
                                     </li>
                                     <li class="list-group-item">
-                                        <b>Points earned</b> <a class="float-right">13,287</a>
+                                        <b>Points earned</b> <a class="float-right">0</a>
                                     </li>
                                     </ul>
 
@@ -69,9 +69,93 @@
                                     <div class="active tab-pane" id="activity">
 
 
-                                        <p>
-                                            Profile Page
-                                        </p>
+                                        <!-- Post -->
+                                        <div class="post clearfix">
+                                        <!-- <div class="user-block">
+                                            <span class="username" style="margin-left:0">
+                                            <a href="#">Personal Details</a>
+                                            </span>
+                                        </div> -->
+                                        <!-- /.user-block -->
+                                        <table class="table table-borderless">
+                                        <col width="450px" />
+                                        <tbody>
+                                            <tr>
+                                            <td>Name</td>
+                                            <td>{{this.form.name || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>E-Mail</td>
+                                            <td>{{this.form.email || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Sex</td>
+                                            <td>{{this.form.sex || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Age</td>
+                                            <td>{{this.form.age || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Phone Number</td>
+                                            <td>{{this.vForm.phone || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Contact Address</td>
+                                            <td>{{this.vForm.address || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Profession</td>
+                                            <td>{{this.vForm.profession || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Area Of Volunteer</td>
+                                            <td>{{this.vForm.volunteerArea || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Reason For Volunteering</td>
+                                            <td>{{this.vForm.whyVolunteer || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Goals You Plan To Achieve</td>
+                                            <td>{{this.vForm.goal || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Facebook Handle</td>
+                                            <td>{{this.vForm.facebook || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Instagram Handle</td>
+                                            <td>{{this.vForm.instagram || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Twitter Handle</td>
+                                            <td>{{this.vForm.twitter || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>How You Heard About Kindheart</td>
+                                            <td>{{this.vForm.heard || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>What You Enjoyed In Previous Volunteer</td>
+                                            <td>{{this.vForm.enjoyedMost || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>What You Least Enjoyed In Previous Volunteer</td>
+                                            <td>{{this.vForm.enjoyedLeast || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Languages</td>
+                                            <td>{{this.vForm.language || 'not filled'}}</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Communication Channel Prefered</td>
+                                            <td>{{this.vForm.channel || 'not filled'}}</td>
+                                            </tr>
+                                        </tbody>
+                                        </table>
+                                        </div>
+                                        <!-- /.post -->
                                     </div>
                                     <!-- /.tab-pane -->
 
@@ -178,7 +262,7 @@
                                             </div>
                                             
                                             <div class="form-group">
-                                                <label for="volunteerArea" class="col-sm-10 control-label">Area of volunteer</label>
+                                                <label for="volunteerArea" class="col-sm-10 control-label">Area Of Volunteer</label>
 
                                                 <div class="col-sm-10">
                                                 <select v-model="vForm.volunteerArea" class="custom-select form-control" :class="{ 'is-invalid': vForm.errors.has('volunteerArea') }">
@@ -196,7 +280,7 @@
                                             </div>
                                             
                                             <div class="form-group">
-                                                <label for="whyVolunteer" class="col-sm-10 control-label">Why do you want to volunteer</label>
+                                                <label for="whyVolunteer" class="col-sm-10 control-label">Why Do You Want To Volunteer</label>
 
                                                 <div class="col-sm-10">
                                                 <input type="text" v-model="vForm.whyVolunteer" id="whyVolunteer" placeholder="whyVolunteer" 
@@ -206,10 +290,10 @@
                                             </div>
                                             
                                             <div class="form-group">
-                                                <label for="goal" class="col-sm-10 control-label">List 4 Goals you plan to achieve while volunteering with kindheart </label>
+                                                <label for="goal" class="col-sm-10 control-label">List 4 Goals You Plan To Achieve While Volunteering With Kindheart </label>
 
                                                 <div class="col-sm-10">
-                                                <input type="text" v-model="vForm.goal" id="goal" placeholder="goal" 
+                                                <input type="text" v-model="vForm.goal" id="goal" placeholder="goals, (sepereted by cooma)" 
                                                 class="form-control" :class="{ 'is-invalid': form.errors.has('goal') }" >
                                                 <has-error :form="form" field="goal"></has-error>
                                                 </div>
@@ -236,7 +320,7 @@
                                             </div>
                                             
                                             <div class="form-group">
-                                                <label for="twitter" class="col-sm-2 control-label">twitter</label>
+                                                <label for="twitter" class="col-sm-2 control-label">Twitter Handle</label>
 
                                                 <div class="col-sm-10">
                                                 <input type="text" v-model="vForm.twitter" id="twitter" placeholder="twitter" 
@@ -246,7 +330,7 @@
                                             </div>
                                             
                                             <div class="form-group">
-                                                <label for="heard" class="col-sm-10 control-label">How did you hear about Kindheart organization?</label>
+                                                <label for="heard" class="col-sm-10 control-label">How Did You Hear About Kindheart?</label>
 
                                                 <div class="col-sm-10">
                                                 <input type="text" v-model="vForm.heard" id="heard" placeholder="heard" 
@@ -256,27 +340,27 @@
                                             </div>
                                             
                                             <div class="form-group">
-                                                <label for="enjoyedMost" class="col-sm-10 control-label">What have you enjoyed most in previous volunteer works?</label>
+                                                <label for="enjoyedMost" class="col-sm-10 control-label">What Have You Enjoyed Most In Previous Volunteer Works?</label>
 
                                                 <div class="col-sm-10">
-                                                <input type="text" v-model="vForm.enjoyedMost" id="enjoyedMost" placeholder="enjoyedMost" 
+                                                <input type="text" v-model="vForm.enjoyedMost" id="enjoyedMost" placeholder="None If It's Your First Volunteer" 
                                                 class="form-control" :class="{ 'is-invalid': form.errors.has('enjoyedMost') }" >
                                                 <has-error :form="form" field="enjoyedMost"></has-error>
                                                 </div>
                                             </div>
                                             
                                             <div class="form-group">
-                                                <label for="enjoyedLeast" class="col-sm-10 control-label">What have you enjoyed the least in previous volunteer works?</label>
+                                                <label for="enjoyedLeast" class="col-sm-10 control-label">What Have You Enjoyed The Least In Previous Volunteer works?</label>
 
                                                 <div class="col-sm-10">
-                                                <input type="text" v-model="vForm.enjoyedLeast" id="enjoyedLeast" placeholder="enjoyedLeast" 
+                                                <input type="text" v-model="vForm.enjoyedLeast" id="enjoyedLeast" placeholder="None If It's Your First Volunteer" 
                                                 class="form-control" :class="{ 'is-invalid': form.errors.has('enjoyedLeast') }" >
                                                 <has-error :form="form" field="enjoyedLeast"></has-error>
                                                 </div>
                                             </div>
                                             
                                             <div class="form-group">
-                                                <label for="language" class="col-sm-10 control-label">Specify the languages you speak</label>
+                                                <label for="language" class="col-sm-10 control-label">Specify Languages You Speak</label>
 
                                                 <div class="col-sm-10">
                                                 <input type="text" v-model="vForm.language" id="language" placeholder="language" 
@@ -286,12 +370,12 @@
                                             </div>
                                             
                                             <div class="form-group">
-                                                <label for="channel" class="col-sm-10 control-label">What communication channels do you prefer?</label>
+                                                <label for="channel" class="col-sm-10 control-label">What Communication Channels Do You Prefer?</label>
 
                                                 <div class="col-sm-10">
                                                 <select v-model="vForm.channel" class="custom-select form-control" :class="{ 'is-invalid': vForm.errors.has('channel') }">
                                                     <option value="whatsapp" selected>WhatsApp</option>
-                                                    <option value="email">email</option>
+                                                    <option value="email">Email</option>
                                                 </select>
                                                 <has-error :form="form" field="channel"></has-error>
                                                 </div>
@@ -387,6 +471,13 @@
                 this.form.patch('api/profile/')
                 .then( () => {
                     this.$Progress.finish()
+                    Swal.fire({
+                        position: 'top-end',
+                        type: 'success',
+                        title: 'Volunteer profile saved successfully',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
                 })
                 .catch( () => {
                     this.$Progress.fail()

@@ -1,12 +1,15 @@
 <section id="section-intro">
     <div class="overlay-white"></div>
     <div class="container">
+        {{-- <div class="container"> --}}
+{{-- </div> --}}
         <div class="row">
             <div class="col-md-12">
                 <div class="carousel slide" id="banner-slider" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="item active text-center">
                             <div class="intro-caption">
+                                @include('inc.messages')
                                 <div class="subtitle">We are Building a cancer-free nation! </div>
                                 <h1>Grow the vision with us</h1>
                                 <div class="btn-container wow fadeInUp">

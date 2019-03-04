@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('index');
 
 Route::resource('/referrals', 'ReferralsController');
 Auth::routes();
